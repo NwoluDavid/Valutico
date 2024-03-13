@@ -16,7 +16,7 @@ header{
     top: 0;
     box-shadow: 0px 4px 4px 0px #0000000D;
     background: #FFFFFF;
-    z-index: 10;
+    z-index: 9;
 }
 nav {
     display: flex;
@@ -68,7 +68,7 @@ main{
     align-items: center;
     justify-content: center;
     background: #FFFFFF;
-    margin-top: 80px;
+    margin-top: 100px;
     gap: 20px;
     color: #373737;
 
@@ -290,7 +290,7 @@ main{
     justify-content: center;
 }
 
-@media only screen and (max-width: 1200px){
+@media only screen and (max-width: 834px){
 
     header{
         padding: 30px 0px;
@@ -475,4 +475,11 @@ main{
     .lastbtn{
         margin-top: 72px;
     }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 393px) {
+
+
+
 }
