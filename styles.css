@@ -412,7 +412,7 @@ main{
     }
     
     .sec4div1{
-        width:800px ;
+        width:700px ;
         gap: 16px;
 
     }
@@ -599,8 +599,8 @@ main{
     }
     
     .world h1 {
-        font-size: 32px;
-        line-height: 48px;
+        font-size: 22px;
+        line-height: 30px; 
         font-weight: 800;
     }
     
@@ -608,7 +608,7 @@ main{
         max-width: 329px;
     }
     .val-pro p{
-        font-size: 16px;
+        font-size: 12px;
         line-height: 32px;
         font-weight: 500;
     }
@@ -635,7 +635,9 @@ main{
         font-weight: 500;
     }
     .grid-container {
-        width: 100%;
+        justify-content: center;
+        align-items: center;
+        /* width: 100%; */
         grid-template-columns: repeat(2, 1fr);
     }
     .grid-container img{
