@@ -10,7 +10,6 @@ body{
 }
 header{
     width: 100%;
-    /* height: 120px; */
     padding: 30px 43px;
     position: fixed;
     top: 0;
@@ -116,14 +115,6 @@ main{
 }
 
 
-/* .section2{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: fit-content;
-    margin-top: 40px;
-} */
-
 .section3{
     display: flex;
     flex-direction: column;
@@ -152,16 +143,21 @@ main{
     text-align: center;
 }
 
+.grid-pic{
+    width: 100%;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto auto;
     padding: 10px;
     gap: 10px;
-  }
-  .grid-item {
+    width: 100%;
+}
+.grid-item {
     border: 1px solid whitesmoke;
     text-align: center;
-  }
+}
 
 .section4{
     color: white;
@@ -242,6 +238,7 @@ main{
     display: flex;
     gap: 60px;
     margin-top: 20px;
+    justify-content: center;
 }
 
 .writeDiv{
@@ -252,9 +249,6 @@ main{
     justify-content: space-evenly;
 }
 
-.lastpic{
-    width: 731px;
-}
 .lastpic img{
     width: 100%;
 }
@@ -293,30 +287,64 @@ main{
     justify-content: center;
 }
 
-@media only screen and (max-width: 834px){
+@media only screen and (max-width: 835px){
 
     header{
-        padding: 30px 0px;
+        max-width: 834px;
+        padding: 30px 30px;
+        position: fixed;
+        top: 0;
+        box-shadow: 0px 4px 4px 0px #0000000D;
+        background: #FFFFFF;
+        z-index: 9;
+    }
+    
+    nav{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
     
     nav ul {
-        width: auto;
-        gap: 30px;
+        display: none;
     }
     
-    button {
-        color: #f5f5f5;
-        width: 200px;
-        border: none;
-        border-radius: 9px;
-        background-color: #6FC247;
-        height: 50px;
+
+   nav button{
+        display: none;
+    }
+
+    .container{
+        display: inline-block;
+        cursor: pointer;
+    }
+    .container{
+        position: absolute;
+        top: 1.5rem;
+        right: 2rem;
+    }
+    .bar1, .bar2, .bar3{
+        width: 35px;
+        height: 5px;
+        background-color: #333;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+    
+    .change .bar1{
+        transform: translate(0, 11px) rotate(-45deg);
+    }
+    
+    .change .bar2{opacity: 0;}
+    
+    .change .bar3 {
+        transform: translate(0, -11px) rotate(45deg);
     }
     
     .section1 {
         margin-top: 80px;
         gap: 20px;
-    
     }
     
     .world h1 {
@@ -332,16 +360,7 @@ main{
     .main_button{
         gap: 32px;
     }
-
-    /* .section2{
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        height: fit-content;
-        margin-top: 40px;
-    } */
     
-
     .section3{
 
         gap: 20px;
@@ -365,12 +384,18 @@ main{
 
     }
 
-    .grid-container {
-        display: grid;
-        grid-template-columns: auto auto auto;
-        padding: 10px;
-        gap: 10px;
+    .grid-pic{
+        width: 100%;
     }
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 64px 40px;
+    }
+    .grid-container img{
+        width: 100%;
+        height: auto;
+    }
+
 
     .grid-item {
         border: 1px solid whitesmoke;
@@ -378,9 +403,8 @@ main{
     }
 
     .section4{
-
-        margin-top: 70px;
-        padding: 72px 102px;
+        max-width: 100%;
+        padding: 64px 40px;
     }
     .sec4div{
         gap: 40px;
@@ -394,10 +418,13 @@ main{
     }
     
     .sec4div2 { 
-
+        display: flex;
+        flex-direction: column;
         width: 100%;
         height: auto;
-        gap: 10px;
+        gap: 40px;
+        justify-content:space-between;
+        align-items: start;
     }
     
     .sec4div1 h2{
@@ -411,8 +438,15 @@ main{
         line-height: auto;
         width: 90%;
 
-    }
+    }   
 
+    
+    .sec4indiv {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+    }
     .sec4indiv h2{
         font-size: 18px;
         padding-bottom: 20px;
@@ -422,9 +456,13 @@ main{
         font-size: 16px;
     }
 
+
     .section5{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         margin-top:20px;
-        padding: 69px 103px 69px 103px;
+        padding: 64px 40px;
         gap: 32px;
     }
     
@@ -441,20 +479,31 @@ main{
         line-height: auto;
 
     }
-    
     .sec5div2{
+        display: flex;
         gap: 16px;
-        margin-top: 20px;
     }
     
     .writeDiv{
-        width: 350px;
+        width: 100%;
+        padding: 3px;
         gap: 32px;
     }
     
-    .lastpic{
-        width: 731px;
+    .lastpic {
+        display: none;
     }
+    .lastpic-mobile {
+        width: 369px;
+        height: 634px;
+        background-image: url('image/last image.png');
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        /* Add the following line */
+        box-sizing: border-box;
+    }
+    
     
     .headingp{
         width: 100%;
@@ -480,21 +529,36 @@ main{
     }
 }
 
-@media only screen and (max-width: 400px){
+@media only screen and (max-width: 395px){
 
-    /* .dextopnav {
-        display: none;
-    } */
+
+    header{
+        width: 100%;
+    }
+
     nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav ul{
         display: none;
     }
-    .mobileDis{
-        display: block;
-        
+    nav button{
+        display: none;
     }
+
     .container{
         display: inline-block;
         cursor: pointer;
+    }
+
+    .container{
+        position: absolute;
+        top: 1.5rem;
+        right: 2rem;
+
     }
     
     .bar1, .bar2, .bar3{
@@ -514,5 +578,200 @@ main{
     .change .bar3 {
         transform: translate(0, -11px) rotate(45deg);
     }
+
+    main {
+       max-width: 100%;
+        padding: 0 32px;
+    }
+
+    .main_button {
+        width: 100%;
+    }
+
+    .section1 {
+        gap: 20px;
+        padding-top: 48px;
+    }
+
+    .world {
+        max-width: 329px;
+
+    }
+    
+    .world h1 {
+        font-size: 32px;
+        line-height: 48px;
+        font-weight: 800;
+    }
+    
+    .val-pro {
+        max-width: 329px;
+    }
+    .val-pro p{
+        font-size: 16px;
+        line-height: 32px;
+        font-weight: 500;
+    }
+
+    .picdiv1 {
+        margin-top: 0;
+    }
+
+    .section3{
+        padding: 24px 32px;
+        text-align: center;
+    }
+
+    
+    .section3 h2{ 
+        font-size: 20px;
+        line-height: 32px;
+        font-weight: 700;
+    }
+    
+    .section3 p{
+        font-size: 16px;
+        line-height: 32px;
+        font-weight: 500;
+    }
+    .grid-container {
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .grid-container img{
+        width: 150px;
+        height: auto;
+    }
+
+    .section4{
+        max-width: 100%;
+        padding: 64px 32px;
+        margin-top: 0;
+    }
+    .sec4div{
+        gap: 40px;
+   
+    }
+    .sec4div1 {
+        width: 100%;
+    }
+
+    .sec4div2 { 
+        width: 100%;
+        height: auto;
+        gap: 40px;
+    }
+    
+    .sec4div1 h2{
+        width: 100%;
+        font-size: 20px;
+        line-height: 27.32px;
+        font-weight: 800;
+        color: #FFFFFF;
+    
+    }
+    
+    .sec4div1 p{
+        width: 100%;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 32px;
+        color:#D7D7D7;
+    }   
+
+    
+    .sec4indiv {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        color: #D7D7D7;
+        
+    }
+    .sec4indiv h2{
+        font-size: 18px;
+        padding-bottom: 20px;
+        line-height: 24.59px;
+        font-weight: 700;
+        color: #FFFFFF;
+    }
+
+    .sec4indiv p {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 500;
+    }
+
+    .section5{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 64px 0px;
+        gap: 16px;
+    }
+    
+    .sec5div1{
+
+        gap: 16px;
+    }
+    
+    .sec5div1 h2{
+        font-size: 20px;
+        line-height: 27.32px;
+        font-weight: 800;
+    }
+    .sec5div1 p{
+        font-size: 16px;
+        font-weight: 500px;
+        line-height: 32px;
+
+    }
+    .sec5div2{
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 16px;
+    }
+
+    .lastpic {
+        display: none;
+    }
+    .lastpic-mobile {
+        width: 100%;
+        background-image: url('image/last image.png');
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        /* Add the following line */
+        box-sizing: border-box;
+        padding: auto;
+    }
+    
+    
+    .headingp{
+        width: 100%;
+        /* gap: 8px; */
+    }
+    
+    .headingp h3{
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 24.59px;
+        letter-spacing: 0em;
+        color: #373737;
+    
+    }
+    
+    .headingp p{
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 32px;
+    }
+    .lastbtn{
+        display: flex;
+        margin-top: 72px;
+        justify-content: center;
+    }
+
 
 }
